@@ -1,6 +1,18 @@
-import java.util.HashMap;
-import java.util.Map;
 import LeetCodeDS.TreeNode;
+import java.util.*;
+/*
+    ###########################################
+           List of Problems
+    ###########################################
+       1.    Two Sum                 1
+       2.    Hamming Distance        461
+       3.    Merge Two Binary Trees  617
+       4.    Single Number           136
+       5.    Single Number           136
+       6.    Single Number           136
+       7.    Single Number           136
+ */
+
 
 
 public class EasyProblems {
@@ -105,7 +117,7 @@ public class EasyProblems {
         return counter;
     }
 
-     /*
+   /*
     ################################################################################
     617. MERGE TWO BINARY TREES
     https://leetcode.com/problems/merge-two-binary-trees/description/
@@ -146,7 +158,7 @@ public class EasyProblems {
     ###############################################################################
     */
 
-     public TreeNode mergeTrees(TreeNode t1, TreeNode t2){
+    public TreeNode mergeTrees(TreeNode t1, TreeNode t2){
          if (t1 == null){
              return t2;
          }
@@ -163,8 +175,42 @@ public class EasyProblems {
 
 
 
-     //To be filled in.
-     public int singleNumber(int[] nums){
+    /* 136. Single Number
+    ################################################################################
+    https://leetcode.com/problems/single-number/
+
+    DESCRIPTION: Given a non-empty array of integers, every element appears twice
+    except for one. Find that single one.
+
+    Note: Your algorithm should have a linear runtime complexity. Could you
+    implement it without using extra memory?
+
+    eg)
+    Input: [2,2,1]
+    Output: 1
+
+    Input: [4,1,2,1,2]
+    Output: 4
+
+    SOLUTION: This problem is of linear run time complexity, no embedded for loops!
+
+    solution 1: HashMap
+    One way of solving this problem is to use a hash table to store whether or not
+    a number has been seen before. When you come across a number you can mark it as
+    true (seen) and if you come across the number again, you can mark it as false
+    (seen again). After iterating through all the numbers, you can check the values
+    of the array through the map until you come across the single number that comes
+    back as true. The problem with this solution is that it does use extra memory.
+
+   solution 2: Math
+   Get all unique elements of array using set method on array. Multiply the sum of
+   the array
+
+    ################################################################################
+   */
+
+    //HashTable solution
+    public int singleNumber(int[] nums){
          Map<Integer,Boolean> map = new HashMap<Integer,Boolean>();
 
          for (int i =0; i< nums.length; i++){
@@ -184,10 +230,17 @@ public class EasyProblems {
          return 0;
 
      }
-     //283
-     //[0,1,12,0] -> [1,12,0,0]
 
-     public void moveZeroes(int[] nums){
+    //
+    public int singleNumber1(int[] nums){
+
+    return 0;
+    }
+
+    //283
+    //[0,1,12,0] -> [1,12,0,0]
+
+    public void moveZeroes(int[] nums){
 
 
     }
