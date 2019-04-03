@@ -37,12 +37,10 @@ public class EasyProblems {
     Keep in mind that values can be repeated and as such, only the key with the
     largest index will stay.
 
-    The second solution is to find the complement of the target, 'num2' to see if
-    the complement exists in the hash table by iterating through the values. If the
-    complement and the value are the same, the index of the two must be different.
-    You can check the index of the value by keeping the location with a counted for
-    loop. Assuming a key is repeated, the hashmap will always store the larger
-    index and the for loop will always use the index of the smaller index.
+    The second pass is to find the complement of the target, 'num2' to see if
+    the complement exists in the hash table for each value in the array, 'num1'. If the
+    complement exists and it does not exist in the same index as 'num1', than the
+    sum of the two values at the index must be the target
 
     ################################################################################
     */
@@ -231,10 +229,24 @@ public class EasyProblems {
 
      }
 
-    //
+    // Arithmetic approach
     public int singleNumber1(int[] nums){
+        ArrayList<Integer> list = new ArrayList();
+        for(int i: nums){
+            if (!list.contains(i)){
+                list.add(i);
+            }
+        }
+        int totalSum = 0;
+        for(int i= 0; i < list.size();i++){
+            totalSum += list.get(i);
+        }
+        totalSum *=2;
 
-    return 0;
+        for(int i: nums){
+           totalSum -= i;
+        }
+    return totalSum;
     }
 
     //283
