@@ -1,3 +1,5 @@
+package EasyProblems;
+
 import LeetCodeDS.TreeNode;
 import java.util.*;
 /*
@@ -8,7 +10,7 @@ import java.util.*;
        2.    Hamming Distance        461
        3.    Merge Two Binary Trees  617
        4.    Single Number           136
-       5.    Single Number           136
+       5.    Move Zeroes             283
        6.    Single Number           136
        7.    Single Number           136
  */
@@ -249,12 +251,52 @@ public class EasyProblems {
     return totalSum;
     }
 
-    //283
-    //[0,1,12,0] -> [1,12,0,0]
+    /* 283. Move Zeroes
+   ################################################################################
+   https://leetcode.com/problems/move-zeroes/
 
-    public void moveZeroes(int[] nums){
+   DESCRIPTION: Given an Array nums, write a function to move all 0's to the end of
+   it while maintaining the relative order of the non-zero elements.
+
+   Note:
+   1. You must do this in-place without making a copy of the array.
+   2. Minimize the total number of operations
+
+   eg)
+   Input: [0,1,0,3,12]
+   Output: [1,3,12,0,0]
 
 
+   SOLUTION: Iterate through the array until you find a zero element. Save the
+   position of this element. Iterate through the array again until you find a non
+   zero element. If the index of the zero element is smaller than the index of the
+   non zero element, swap the positions of these two numbers and stop looking
+   for a non zero element. Continue iterating through looking for a zero element
+   until you find one.
+
+   The algorithm returns an array with all the zero elements pushed to the right
+   of the array while maintaining the order of the non zero elements.
+
+   ################################################################################
+  */
+    public void moveZeroes(int[] nums) {
+        int marker1 = 0;
+        int marker2 = 0;
+
+        for (int i = 0; i < nums.length; i++){
+            if (nums[i] == 0){
+                marker1 = i;
+                for (int j = marker2; j <nums.length;j++){
+                    if ((nums[j]!= 0) && i < j){
+                        marker2 = j;
+                        nums[i] = nums[j];
+                        nums[j] = 0;
+                        break;
+                    }
+                }
+            }
+
+        }
     }
 
 
