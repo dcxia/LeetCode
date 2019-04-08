@@ -6,13 +6,15 @@ import java.util.*;
     ###########################################
            List of Problems
     ###########################################
+    From here out, problems will be done in
+    their own classes.
+
+    ###########################################
        1.    Two Sum                 1
        2.    Hamming Distance        461
        3.    Merge Two Binary Trees  617
        4.    Single Number           136
        5.    Move Zeroes             283
-       6.    Single Number           136
-       7.    Single Number           136
  */
 
 
@@ -299,16 +301,5 @@ public class EasyProblems {
         }
     }
 
-
-    //538 Convert BST to Greater Tree
-    public TreeNode convertBST(TreeNode root){
-        if (root.right != null){
-            System.out.println("works");
-        }
-        System.out.println("nah");
-         System.out.println(root.right.val);
-
-         return null;
-    }
 
 }

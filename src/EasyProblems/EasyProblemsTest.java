@@ -35,25 +35,5 @@ class EasyProblemsTest {
         assertTrue(easy.hammingDistance(4,1) == 2);
     }
 
-    void instantiateTreeNode(TreeNode node, TreeNode left, TreeNode right, int val){
-        node.left  = left;
-        node.right = right;
-        node.val = val;
-    }
 
-    @Test
-    void mergeTrees(){
-        TreeNode t1 = new TreeNode();
-        TreeNode t2 = new TreeNode();
-        TreeNode t4 = new TreeNode();
-        TreeNode t3 = new TreeNode();
-
-        TreeNode t5 = new TreeNode();
-        TreeNode t6 = new TreeNode();
-        TreeNode t7 = new TreeNode();
-        TreeNode t8 = new TreeNode();
-        TreeNode t9 = new TreeNode();
-
-        //instantiateTreeNode(t1, t2, t3);
-    }
 }
